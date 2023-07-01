@@ -1,0 +1,12 @@
+---
+- name: Show Uptime
+  hosts: ubuntu
+
+  tasks:
+    - name: Run uptime command
+      command: uptime
+      register: uptime_output
+
+    - name: Display uptime
+      debug:
+        var: uptime_output.stdout_lines

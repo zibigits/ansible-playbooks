@@ -1,0 +1,16 @@
+---
+- name: Show Service Status
+  hosts: ubuntu
+  vars:
+    servicname:
+
+  tasks:
+   - name: check for service status
+     shell: sudo service {{ servicename }} status
+     ignore_errors: true
+     register: servicestatus
+
+   - name: Show service service status
+     debug:
+       msg: '{{ servicename }} exists.'
+     when: servicestatus.rc | int == 0

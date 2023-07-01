@@ -1,0 +1,14 @@
+---
+- name: Show Service Status
+  hosts: ubuntu
+
+  tasks:
+    - name: Check service status
+      systemd:
+        name: sshd
+        state: status
+      register: service_status
+
+    - name: Display service status
+      debug:
+        var: service_status

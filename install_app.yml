@@ -1,0 +1,11 @@
+---
+- name: Install specified app on Linux
+  hosts: ubuntu
+  vars:
+    appname:
+
+  tasks:
+    - name: Install specified package
+      apt:
+        name: '{{ appname }}'
+        state: present
