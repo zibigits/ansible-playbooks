@@ -1,6 +1,7 @@
 ---
 - name: Show Uptime
-  hosts: ubuntu
+  hosts: all
+  became: true
 
   tasks:
     - name: Run uptime command
