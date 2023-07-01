@@ -8,7 +8,7 @@
   tasks:
     - name: Change service status to stoppped
       systemd:
-        name: {{ servicename }}
+        name: '{{ servicename }}'
         state: stopped
       register: service_status
 
