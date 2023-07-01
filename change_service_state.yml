@@ -1,12 +1,15 @@
 ---
-- name: Show Service Status
-  hosts: ubuntu
+- name: Change service status to stopped  
+  hosts: all
+  become: true
+  vars:
+    servicename:
 
   tasks:
-    - name: Check service status
+    - name: Change service status to stoppped
       systemd:
-        name: sshd
-        state: status
+        name: {{ servicename }}
+        state: stopped
       register: service_status
 
     - name: Display service status

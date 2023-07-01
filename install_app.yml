@@ -1,6 +1,7 @@
 ---
 - name: Install specified app on Linux
-  hosts: ubuntu
+  hosts: all
+  become: true
   vars:
     appname:
 

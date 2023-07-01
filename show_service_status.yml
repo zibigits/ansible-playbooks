@@ -1,8 +1,9 @@
 ---
 - name: Show Service Status
-  hosts: ubuntu
+  hosts: all
+  become: true
   vars:
-    servicname:
+    servicename:
 
   tasks:
    - name: check for service status
